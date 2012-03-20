@@ -36,8 +36,17 @@ Normally this will NOT run on Windows systems.
 In order to get it to work you need to get two files.
 
 1) Download busybox.exe from http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe and place it anywhere in your PATH
+<pre>
+wget http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe 
+ren busybox.exe c:\windows\system32
+</pre>
 
-2) Download runbash.bat from this repository and rename it to the same name as your bash script and place it in the same folder too. In the case of the example above it would be named bacftp.bat
+2) Download runbash.bat from this repository and rename it to the same name as your bash script and place it in the same folder too. In the case of the example above it would be named bacftp.bat. So for example.
+<pre>
+wget https://raw.github.com/skanga/BashWin/master/runbash.bat
+ren runbash.bat bacftp.bat
+bacftp
+</pre>
 
 Now just run bacftp and it should work as expected
 
