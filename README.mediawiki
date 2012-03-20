@@ -13,7 +13,7 @@ Lets say I have a simple script called bacftp.sh that I use to FTP my backup fil
 
 It looks like this:
 
-<nowiki>
+<pre>
 #!/bin/sh
 HOST='big-box.backup.com'
 USER='my-username'
@@ -29,7 +29,7 @@ put $FILE
 quit
 END_SCRIPT
 exit 0
-</nowiki>
+</pre>
 
 Normally this will NOT run on Windows systems. 
 
@@ -50,7 +50,7 @@ Which commands are supported?
 
 Whatever is built-in on the version of busybox.exe that you have should work. For the one referenced in the DropBox link above the following commands work.
 
-<nowiki>
+<pre>
 Currently defined functions:
         [, [[, ar, ash, awk, base64, basename, bash, bbconfig, bunzip2, bzcat,
         bzip2, cal, cat, catv, cksum, cmp, comm, cp, cpio, cut, date, dc, dd,
@@ -62,7 +62,7 @@ Currently defined functions:
         tac, tail, tar, tee, test, touch, tr, true, uncompress, unexpand, uniq,
         unix2dos, unlzma, unlzop, unxz, unzip, usleep, uudecode, uuencode, vi,
         wc, wget, which, whoami, xargs, xz, xzcat, yes, zcat
-</nowiki>
+</pre>
 
 In case you have another version with more (or less) built-in commands than this one they will all still work.
 
