@@ -1,0 +1,71 @@
+= Bash for Windows =
+
+== What is it? ==
+
+This project allows you to run bash scripts on Windows OS without using Cygwin, MSYS or any other large Unix emulation layer. It used busybox.exe instead in order to accomplish this task.
+
+
+== How do I use it? ==
+
+This is best explained using an example:
+
+Lets say I have a simple script called bacftp.sh that I use to FTP my backup file to a remote server. 
+
+It looks like this:
+
+<nowiki>
+#!/bin/sh
+HOST='big-box.backup.com'
+USER='my-username'
+PASSWD='my-password'
+FILE='my-compressed-backup.zip'
+
+ftp -n $HOST <<END_SCRIPT
+quote USER $USER
+quote PASS $PASSWD
+hash
+bin
+put $FILE
+quit
+END_SCRIPT
+exit 0
+</nowiki>
+
+Normally this will NOT run on Windows systems. 
+
+In order to get it to work you need to get two files.
+
+1) Download busybox.exe from http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe and place it anywhere in your PATH
+
+2) Download runbash.bat from this repository and rename it to the same name as your bash script and place it in the same folder too. In the case of the example above it would be named bacftp.bat
+
+Now just run bacftp and it should work as expected
+
+
+== How does it work? ==
+
+Busybox.exe is a single binary that contains a large number of unix utilities within it. The batch file does some intricate wranging with busybox itself to produce the .aliases file that points all the utilities back to busybox itself. So when they are called from your bash script they all work. Then is runs your script under the bash interpreter built into busybox.
+
+Which commands are supported?
+
+Whatever is built-in on the version of busybox.exe that you have should work. For the one referenced in the DropBox link above the following commands work.
+
+<nowiki>
+Currently defined functions:
+        [, [[, ar, ash, awk, base64, basename, bash, bbconfig, bunzip2, bzcat,
+        bzip2, cal, cat, catv, cksum, cmp, comm, cp, cpio, cut, date, dc, dd,
+        diff, dirname, dos2unix, echo, ed, egrep, env, expand, expr, false,
+        fgrep, find, fold, getopt, grep, gunzip, gzip, hd, head, hexdump, kill,
+        killall, length, ls, lzcat, lzma, lzop, lzopcat, md5sum, mkdir, mv, od,
+        pgrep, pidof, printenv, printf, ps, pwd, rm, rmdir, rpm2cpio, sed, seq,
+        sh, sha1sum, sha256sum, sha512sum, sleep, sort, split, strings, sum,
+        tac, tail, tar, tee, test, touch, tr, true, uncompress, unexpand, uniq,
+        unix2dos, unlzma, unlzop, unxz, unzip, usleep, uudecode, uuencode, vi,
+        wc, wget, which, whoami, xargs, xz, xzcat, yes, zcat
+</nowiki>
+
+In case you have another version with more (or less) built-in commands than this one they will all still work.
+
+== Any gotchas? ==
+
+Of course! First of all you have to be very careful about patch separator chars. Secondly the busybox version of your favorite command may not support all the switches/flags of the full version (although I have yet to find this problem) and lastly this is not easy to debug.
