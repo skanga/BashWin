@@ -57,7 +57,7 @@ Busybox.exe is a single binary that contains a large number of unix utilities wi
 
 Which commands are supported?
 
-Whatever is built-in on the version of busybox.exe that you have should work. For the one referenced in the DropBox link above the following commands work.
+Whatever is built-in on the version of busybox.exe that you have should work. For the one referenced in the link above the following commands work.
 
 <pre>
 Currently defined functions:
