@@ -36,13 +36,14 @@ In order to get it to work with BashWin you need to get two files.
 1) Download busybox.exe from https://frippery.org/files/busybox/busybox.exe and place it anywhere in your PATH
 <pre>
 wget https://frippery.org/files/busybox/busybox.exe
-ren busybox.exe c:\windows\system32
+ren busybox.exe c:\bin
 </pre>
 
-2) Download runbash.bat from this repository and rename it to the same name as your bash script and place it in the same folder too. In the case of the example above it would be named bacftp.bat. So for example.
+2) Download runbash.bat from this repository at https://raw.github.com/skanga/BashWin/master/runbash.bat and rename it to the same name as your bash script and place it in the same folder too. In the case of the example above it would be named bacftp.bat. So for example.
 <pre>
 wget https://raw.github.com/skanga/BashWin/master/runbash.bat
-ren runbash.bat bacftp.bat
+ren runbash.bat c:\bin\bacftp.bat
+cd \bin
 bacftp
 </pre>
 
