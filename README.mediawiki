@@ -33,9 +33,9 @@ Normally this cannot run on Windows systems.
 
 In order to get it to work with BashWin you need to get two files.
 
-1) Download busybox.exe from http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe and place it anywhere in your PATH
+1) Download busybox.exe from https://frippery.org/files/busybox/busybox.exe and place it anywhere in your PATH
 <pre>
-wget http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe 
+wget https://frippery.org/files/busybox/busybox.exe
 ren busybox.exe c:\windows\system32
 </pre>
 
