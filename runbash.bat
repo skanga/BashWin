@@ -5,7 +5,7 @@ if not defined FOUND (
   echo ERROR: Unable to find busybox.exe in your PATH. 
   echo        This application uses busybox in order to run bash scripts on Windows 
   echo        Please download it and move it into some directory that is in your PATH
-  echo        It is found at: http://dl.dropbox.com/u/5943991/busybox-w32/busybox.exe
+  echo        It is found at https://frippery.org/files/busybox/busybox.exe
   goto end
 )
 : generate the awk script that helps format the .alias file
