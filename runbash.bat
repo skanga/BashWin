@@ -9,7 +9,7 @@ if not defined FOUND (
   goto end
 )
 : generate the awk script that helps format the .alias file
-echo BEGIN {print "#!./busybox bash\n\n# Don't allow any other versions of these commands on the PATH\nexport PATH=""\n\n"} > .alias-format.awk
+echo BEGIN {print "#!./busybox bash\n\n# Don't allow any other versions of these commands on the PATH\nexport PATH=""\nexport BASHWIN=true\n\n"} > .alias-format.awk
 echo {print "alias " $1 "=\"./busybox " $1 "\""} >> .alias-format.awk
 : busybox awk needs unix line termination
 busybox dos2unix .alias-format.awk
