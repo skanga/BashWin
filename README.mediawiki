@@ -49,7 +49,7 @@ bacftp
 
 Now just run bacftp and it should work as expected
 
-NOTE: Once you have these two files downloaded you do not ned to get them again. Just keep copying/renaming runbash.bat to whatever new scripts you write.
+NOTE: Once you have these two files downloaded you do not need to get them again. Just keep copying/renaming runbash.bat to whatever new scripts you write.
 
 == How does it work? ==
 
